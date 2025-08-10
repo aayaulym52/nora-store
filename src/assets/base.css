@@ -1,0 +1,152 @@
+@import url(https://db.onlinewebfonts.com/c/d8c3c276bfc50eb876897d00332d505e?family=Quincy+CF);
+
+@font-face {
+  font-family: "Vogue Highline Sans";
+  src: url("https://db.onlinewebfonts.com/t/11791d56bca4198e7eb922ae127479a8.eot");
+  src: url("https://db.onlinewebfonts.com/t/11791d56bca4198e7eb922ae127479a8.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/11791d56bca4198e7eb922ae127479a8.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/11791d56bca4198e7eb922ae127479a8.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/11791d56bca4198e7eb922ae127479a8.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/11791d56bca4198e7eb922ae127479a8.svg#Vogue Highline Sans")
+      format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-color: #fff;
+  color: #4f3e35;
+  font-family: "Vogue Highline Sans";
+  font-size: 13px;
+  font-weight: 400;
+  height: 100%;
+  letter-spacing: 0.7px;
+  line-height: 1.385;
+}
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+router-link {
+  color: inherit;
+  text-decoration: none;
+}
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+p {
+  margin: 1em 0;
+}
+small {
+  margin: 1em 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  margin: 0;
+  background: none;
+  border: none;
+}
