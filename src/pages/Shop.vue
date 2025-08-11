@@ -12,7 +12,9 @@ const shop = useShopStore();
 const route = useRoute();
 const router = useRouter();
 const categories = useCategories();
-
+const toggleWishlist = (item) => {
+  shop.toggleWishlist(item);
+};
 const selectedCategory = ref(route.params.category || "");
 const searchQuery = ref("");
 
@@ -43,6 +45,9 @@ watch(selectedCategory, (newCategory) => {
 </script>
 
 <template>
+   <div v-if="shop.notification" class="notification">
+    {{ shop.notification }}
+  </div>
   <main class="shop-container">
     <div class="Breadcrumbs-header"><Breadcrumbs /></div>
     <h2 class="shop-title">
