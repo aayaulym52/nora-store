@@ -22,7 +22,7 @@
           <div class="cart__items">
             <div class="cart__item-content">
               <img
-                :src="`/images/${item.imgTop[0]}`"
+                :src="`/images/${item.imgTop[1]}`"
                 :alt="item.title"
                 class="cart__item-image"
               />
