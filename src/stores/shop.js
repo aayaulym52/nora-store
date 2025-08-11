@@ -33,22 +33,18 @@ export const useShopStore = defineStore("shop", {
 
         let items = res.data;
 
-        // фильтр по категории
         if (category) {
           items = items.filter(
             (item) =>
               item.category === category || item.tags?.includes(category)
           );
         }
-
-        // фильтр по поиску
         if (search) {
           const searchLower = search.toLowerCase();
           items = items.filter((item) =>
             item.title.toLowerCase().includes(searchLower)
           );
         }
-
         this.items = items;
         await this.fetchWishlist();
       } catch (error) {
