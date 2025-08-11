@@ -4,7 +4,7 @@ export function useIsMobile() {
   const isMobile = ref(false);
 
   const checkIsMobile = () => {
-    isMobile.value = window.innerWidth <= 640;
+    isMobile.value = window.innerWidth <= 650;
   };
 
   onMounted(() => {

@@ -761,7 +761,7 @@ td {
 }
 .care-details ul {
   padding-left: 20px;
-  list-style: disc;
+  list-style: none;
 }
 /* Transition */
 .fade-enter-active,
@@ -1162,6 +1162,9 @@ td {
   }
   .product-info_detail {
     padding: 12px;
+  }
+  .product-info_detail h1 {
+    font-size: 20px;
   }
   .wishlist-icon img {
     width: 16px;

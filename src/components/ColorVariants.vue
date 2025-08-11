@@ -29,15 +29,25 @@ const props = defineProps({
 
 const router = useRouter();
 const shop = useShopStore();
-
 const goToProduct = (id) => {
   router.push(`/item/${id}`);
 };
 
 const colorVariants = computed(() => {
-  return shop.items
-    .filter((item) => item.parentId === props.parentId)
+  const currentItem = shop.items.find(
+    (item) => item.id === props.currentProductId
+  );
+  if (!currentItem) {
+    return [];
+  }
+  if (!currentItem.parentId) {
+    return [currentItem];
+  }
+  const variants = shop.items
+    .filter((item) => item.parentId === currentItem.parentId)
     .sort((a, b) => a.id - b.id);
+
+  return variants.length ? variants : [currentItem];
 });
 
 function mapColorToHex(color) {
@@ -47,6 +57,7 @@ function mapColorToHex(color) {
     Бежевый: "#C2AD92",
     Песочный: "#D7B57F",
     Серый: "#808080",
+    Пепельный: "#9A9B98",
     Белый: "#ffffff",
     "Светло-серый": "#C6CBCC",
     Коричневый: "#6b4c3b",
@@ -56,6 +67,7 @@ function mapColorToHex(color) {
     "Светло-красный в молочную полоску": "#DC343B",
     "Темный кэмел": "#976F4C",
     Бордовый: "#752329",
+    Коньячный: "#60413A",
     Кирпичный: "#8D3F2D",
     "Джинсовый синий": "#495870",
     "Пыльно-розовый": "#B5817D",
