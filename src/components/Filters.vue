@@ -7,34 +7,44 @@ const props = defineProps({
 });
 
 const shop = useShopStore();
-const showFilters = ref(false);
+const showDropdown = ref(false);
+const selectedLabel = ref("По умолчанию");
 
-function toggleFilters() {
-  showFilters.value = !showFilters.value;
-}
+const options = [
+  { value: "", label: "По умолчанию" },
+  { value: "title", label: "По названию" },
+  { value: "price", label: "По возрастанию цены" },
+  { value: "-price", label: "По убыванию цены" },
+];
 
-function sortItems(sortBy) {
-  shop.fetchItems(sortBy, props.category);
-  showFilters.value = false;
+function selectOption(option) {
+  selectedLabel.value = option.label;
+  shop.fetchItems(option.value, props.category);
+  showDropdown.value = false;
 }
 </script>
 
 <template>
-  <div class="filters-wrapper">
-    <button @click="toggleFilters" class="filter-button" aria-label="Фильтр">
-      <img src="/icons/filter.svg" alt="Фильтр" class="filter-icon" />
-    </button>
+  <div class="filters">
+    <div class="filter-select" @click="showDropdown = !showDropdown">
+      <span>{{ selectedLabel }}</span>
+      <img
+        src="/icons/down-arrow.svg"
+        alt=""
+        class="filter-arrow"
+        :class="{ open: showDropdown }"
+      />
+    </div>
 
-    <nav v-if="showFilters" class="filters-dropdown">
-      <button @click="sortItems('title')" class="dropdown-item">
-        По названию
-      </button>
-      <button @click="sortItems('price')" class="dropdown-item">
-        По возрастанию цены
-      </button>
-      <button @click="sortItems('-price')" class="dropdown-item">
-        По убыванию цены
-      </button>
-    </nav>
+    <div v-if="showDropdown" class="filter-dropdown">
+      <div
+        v-for="option in options"
+        :key="option.value"
+        class="dropdown-item"
+        @click="selectOption(option)"
+      >
+        {{ option.label }}
+      </div>
+    </div>
   </div>
 </template>

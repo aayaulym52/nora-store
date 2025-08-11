@@ -1,12 +1,12 @@
 <script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination } from "swiper/modules";
-import { reactive } from "vue";
+import { reactive, ref, onMounted } from "vue";
 import { useIsMobile } from "../composables/useIsMobile";
 import { useShopStore } from "../stores/shop";
+import autoAnimate from "@formkit/auto-animate";
 
 const shop = useShopStore();
-
 const { isMobile } = useIsMobile();
 
 const props = defineProps({
@@ -14,6 +14,11 @@ const props = defineProps({
 });
 
 const activeIndexes = reactive({});
+const productGrid = ref(null);
+
+onMounted(() => {
+  if (productGrid.value) autoAnimate(productGrid.value);
+});
 
 const handleMouseEnter = (itemId) => {
   activeIndexes[itemId] = 1;
@@ -34,10 +39,9 @@ const toggleWishlist = (item, event) => {
 </script>
 
 <template>
-  <section class="product-grid">
+  <section class="product-grid" ref="productGrid">
     <article v-for="item in props.items" :key="item.id" class="product-card">
       <router-link :to="`/item/${item.id}`" class="product-link">
-        
         <!-- Мобильный режим -->
         <Swiper
           v-if="isMobile"

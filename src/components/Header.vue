@@ -62,22 +62,6 @@ function closeDrawer() {
 
           <!-- Правая часть иконки -->
           <div class="nav-right">
-            <button class="header-icon" aria-label="Поиск">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                class="header-icon_svg"
-              >
-                <path
-                  d="M15.13 15.13L20.5 20.5M16.92 10.21C16.92 13.92 13.92 16.92 10.21 16.92C6.5 16.92 3.5 13.92 3.5 10.21C3.5 6.5 6.5 3.5 10.21 3.5C13.92 3.5 16.92 6.5 16.92 10.21Z"
-                  stroke-width="1"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </button>
-
             <router-link
               to="/wishlist"
               class="header-icon"

@@ -22,7 +22,7 @@ export const useShopStore = defineStore("shop", {
     },
   },
   actions: {
-    async fetchItems(sortBy = "title", category = "") {
+    async fetchItems(sortBy = "title", category = "", search = "") {
       try {
         const res = await axios.get(
           "https://5725e8620e37ebd9.mokky.dev/items",
@@ -33,10 +33,19 @@ export const useShopStore = defineStore("shop", {
 
         let items = res.data;
 
+        // фильтр по категории
         if (category) {
           items = items.filter(
             (item) =>
               item.category === category || item.tags?.includes(category)
+          );
+        }
+
+        // фильтр по поиску
+        if (search) {
+          const searchLower = search.toLowerCase();
+          items = items.filter((item) =>
+            item.title.toLowerCase().includes(searchLower)
           );
         }
 
