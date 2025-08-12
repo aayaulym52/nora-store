@@ -95,7 +95,7 @@ const toggleWishlist = (item, event) => {
         <div class="product-info">
           <h3 class="product-title">{{ item.title }}</h3>
           <p class="product-price">
-            {{ item.price.toLocaleString("ru-RU") }} ₽
+            {{ item.price.toLocaleString("ru-RU") }} ₸
           </p>
         </div>
       </router-link>

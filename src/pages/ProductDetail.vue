@@ -81,7 +81,7 @@ onMounted(async () => {
       <article class="product-info_detail">
         <header>
           <h1>{{ item.title }}</h1>
-          <h2>{{ item.price.toLocaleString("ru-RU") }} ₽</h2>
+          <h2>{{ item.price.toLocaleString("ru-RU") }} ₸</h2>
         </header>
 
         <!-- Цвета -->

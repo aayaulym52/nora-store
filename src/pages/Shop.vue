@@ -12,9 +12,7 @@ const shop = useShopStore();
 const route = useRoute();
 const router = useRouter();
 const categories = useCategories();
-const toggleWishlist = (item) => {
-  shop.toggleWishlist(item);
-};
+
 const selectedCategory = ref(route.params.category || "");
 const searchQuery = ref("");
 
@@ -33,7 +31,7 @@ watch(
 
 const debouncedFetch = debounce((query) => {
   shop.fetchItems("title", selectedCategory.value, query);
-}, 500);
+}, 300);
 
 watch(searchQuery, (newValue) => {
   debouncedFetch(newValue);
@@ -45,11 +43,13 @@ watch(selectedCategory, (newCategory) => {
 </script>
 
 <template>
-   <div v-if="shop.notification" class="notification">
+  <div v-if="shop.notification" class="notification">
     {{ shop.notification }}
   </div>
+
   <main class="shop-container">
     <div class="Breadcrumbs-header"><Breadcrumbs /></div>
+
     <h2 class="shop-title">
       {{
         selectedCategory
@@ -57,6 +57,7 @@ watch(selectedCategory, (newCategory) => {
           : "Каталог"
       }}
     </h2>
+
     <div class="shop-header">
       <div class="shop-left"></div>
       <div class="shop-right">
@@ -123,7 +124,6 @@ watch(selectedCategory, (newCategory) => {
             ></path>
           </svg>
         </div>
-
         <h3 class="no-result-title">Ничего не нашлось</h3>
         <p class="no-result-subtitle">Проверьте, правильно ли введен запрос</p>
       </div>

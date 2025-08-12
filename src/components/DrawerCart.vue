@@ -30,7 +30,7 @@
                 <div class="cart__item-title">{{ item.title }}</div>
                 <div class="cart__item-size">Размер: {{ item.size }}</div>
                 <div class="cart__item-price">
-                  {{ item.price.toLocaleString("ru-RU") }} ₽
+                  {{ item.price.toLocaleString("ru-RU") }} ₸
                 </div>
 
                 <div class="cart__item-content">
@@ -71,7 +71,7 @@
         <!-- Итого -->
         <div class="cart__totalItems">Товары: {{ totalItems }}</div>
         <div class="cart__totalsum">
-          Итого: {{ totalSum.toLocaleString("ru-RU") }} ₽
+          Итого: {{ totalSum.toLocaleString("ru-RU") }} ₸
         </div>
         <div>
           <button class="checkout-btn">Оформить заказ</button>
