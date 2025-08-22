@@ -4,7 +4,6 @@ import { Pagination } from "swiper/modules";
 import { reactive, ref, onMounted } from "vue";
 import { useIsMobile } from "../composables/useIsMobile";
 import { useShopStore } from "../stores/shop";
-import autoAnimate from "@formkit/auto-animate";
 
 const shop = useShopStore();
 const { isMobile } = useIsMobile();
@@ -15,10 +14,6 @@ const props = defineProps({
 
 const activeIndexes = reactive({});
 const productGrid = ref(null);
-
-onMounted(() => {
-  if (productGrid.value) autoAnimate(productGrid.value);
-});
 
 const handleMouseEnter = (itemId) => {
   activeIndexes[itemId] = 1;
