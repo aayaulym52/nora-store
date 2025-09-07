@@ -1,7 +1,7 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "./assets/base.css"; // Базовые стили — сначала
+import "./assets/base.css";
 import "./assets/main.css"; 
 import { createPinia } from "pinia";
 import { createApp } from "vue";
